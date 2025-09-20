@@ -1,0 +1,45 @@
+body {
+  background-color: #f5f7fa;
+  font-family: "Inter", sans-serif;
+}
+
+.hero {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+  margin-bottom: 2rem;
+}
+.card {
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card-title {
+  font-weight: 600;
+  color: #111827;
+  font-size: 1.1rem;
+}
+.overlay-text {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.card video,
+.card audio {
+  width: 100%;
+  border-radius: 10px;
+}
+#player video,
+#player audio {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
