@@ -8,25 +8,26 @@ window.addEventListener("DOMContentLoaded", () => {
   if (!rec) {
     player.innerHTML = `
       <div class="alert alert-danger text-center">Įrašas nerastas</div>
-      <div class="text-center mt-3"><a href="index.html" class="btn btn-outline-primary">Grįžti</a></div>
+      <div class="text-center mt-3">
+        <a href="index.html" class="btn btn-outline-primary">Grįžti</a>
+      </div>
     `;
     return;
   }
 
   document.title = rec.title;
 
-  const ext = rec.file.split(".").pop().toLowerCase();
   let mediaHTML = "";
-  if (ext === "mp4" || ext === "avi") {
-    mediaHTML = `<video controls src="${rec.file}"></video>`;
-  } else if (ext === "wav" || ext === "m4a") {
-    mediaHTML = `<audio controls src="${rec.file}"></audio>`;
+  if (rec.file.includes(".mp4") || rec.file.includes(".avi")) {
+    mediaHTML = `<video controls autoplay src="${rec.file}" class="w-100 rounded"></video>`;
+  } else {
+    mediaHTML = `<audio controls autoplay src="${rec.file}" class="w-100"></audio>`;
   }
 
   player.innerHTML = `
     <h2 class="mb-4 text-center">${rec.title}</h2>
     ${mediaHTML}
-    <div class="text-center">
+    <div class="text-center mt-3">
       <a href="index.html" class="btn btn-outline-primary">← Grįžti į sąrašą</a>
     </div>
   `;

@@ -6,15 +6,17 @@ window.addEventListener("DOMContentLoaded", () => {
     col.className = "col-md-4 mb-4";
 
     col.innerHTML = `
-      <div class="card h-100 shadow-sm p-3 text-center position-relative">
-        <div style="font-size:3rem;">${
-          rec.file.endsWith(".mp4") || rec.file.endsWith(".avi") ? "🎬" : "🎵"
-        }</div>
+      <div class="card h-100 shadow-sm p-3 text-center">
+        <div style="font-size:3rem;">
+          ${
+            rec.file.includes(".mp4") || rec.file.includes(".avi") ? "🎬" : "🎵"
+          }
+        </div>
         <h5 class="card-title mt-2">${rec.title}</h5>
         <div id="qrcode-${
           rec.id
-        }" class="mt-3 d-flex justify-content-center qrcode-container"></div>
-        <div class="overlay-text">Peržiūrėti tik nuskenavus QR kodą</div>
+        }" class="mt-3 d-flex justify-content-center"></div>
+        <a href="player.html?id=${rec.id}" class="stretched-link"></a>
       </div>
     `;
     list.appendChild(col);
