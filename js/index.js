@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
     list.appendChild(col);
 
     new QRCode(document.getElementById(`qrcode-${rec.id}`), {
-      text: "https://qr-audio-video.vercel.app/player.html?id=" + rec.id,
+      text: "https://qr-audio-video-2nj4.vercel.app/player.html?id=" + rec.id,
       width: 80,
       height: 80,
     });
