@@ -11,11 +11,13 @@ body {
   border-radius: 0 0 20px 20px;
   margin-bottom: 2rem;
 }
+
 .card {
   border-radius: 16px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
+
 .card:hover {
   transform: translateY(-8px);
 }
@@ -24,12 +26,6 @@ body {
   font-weight: 600;
   color: #111827;
   font-size: 1.1rem;
-}
-.overlay-text {
-  font-size: 0.85rem;
-  color: #6b7280;
-  margin-top: 0.5rem;
-  text-align: center;
 }
 
 .card video,
@@ -43,4 +39,36 @@ body {
   width: 100%;
   border-radius: 12px;
   margin-bottom: 1rem;
+}
+#player .controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#player .controls button {
+  background: #2563eb;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+#player .controls button:hover {
+  background: #1d4ed8;
+}
+#player .controls input[type="range"] {
+  flex: 1;
+  margin: 0 1rem;
+}
+#player .controls span {
+  font-size: 0.9rem;
+  color: #374151;
+}
+#player .metadata {
+  margin-top: 1rem;
+}
+#player .metadata h5 {
+  font-weight: 600;
+  color: #111827;
 }

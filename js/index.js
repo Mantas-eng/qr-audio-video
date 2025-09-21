@@ -3,7 +3,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   records.forEach((rec) => {
     const col = document.createElement("div");
-    col.className = "col-md-4 mb-4";
+    col.className = "col";
 
     col.innerHTML = `
       <div class="card h-100 shadow-sm p-3 text-center">
@@ -21,9 +21,9 @@ window.addEventListener("DOMContentLoaded", () => {
     list.appendChild(col);
 
     new QRCode(document.getElementById(`qrcode-${rec.id}`), {
-      text: rec.file,
-      width: 80,
-      height: 80,
+      text: rec.file, // Tiesiogiai Cloudflare R2 failo URL
+      width: 100,
+      height: 100,
     });
   });
 });
