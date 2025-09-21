@@ -19,17 +19,18 @@
 
     <script>
       const html5QrCode = new Html5Qrcode("reader");
+
       html5QrCode.start(
         { facingMode: "environment" },
         { fps: 10, qrbox: 250 },
         (decodedText) => {
-          document.getElementById("result").innerHTML = `
-          <a href="${decodedText}" class="btn btn-success btn-lg mt-3">Atidaryti failą</a>
-        `;
-          html5QrCode.stop();
+          // Nukreipiam į player.html su query param file=<failo URL>
+          window.location.href = `player.html?file=${encodeURIComponent(
+            decodedText
+          )}`;
         },
         (errorMessage) => {
-          /* ignore errors */
+          /* ignoruojam klaidas */
         }
       );
     </script>
