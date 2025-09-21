@@ -16,13 +16,12 @@ window.addEventListener("DOMContentLoaded", () => {
         <div id="qrcode-${
           rec.id
         }" class="mt-3 d-flex justify-content-center"></div>
-        <a href="player.html?id=${rec.id}" class="stretched-link"></a>
       </div>
     `;
     list.appendChild(col);
 
     new QRCode(document.getElementById(`qrcode-${rec.id}`), {
-      text: "https://qr-audio-video-2nj4.vercel.app/player.html?id=" + rec.id,
+      text: rec.file,
       width: 80,
       height: 80,
     });
